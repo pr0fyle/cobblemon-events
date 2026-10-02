@@ -2,14 +2,9 @@
 
 A **server-only Fabric addon** for Minecraft **1.21.1** and Cobblemon **1.7.3**. Adds independently timed shiny, ultra-rare spawn, Pokémon battle XP, and berry-growth events, plus an optional random-event scheduler. It was developed for the versions used by Cobbleverse **1.7.42**; the modpack itself is not required.
 
-## Install or update
+I made this mod for me and my friends in 20 minutes but it works fine, feel free to do whatever you want with it. 
 
-1. Stop the Minecraft server.
-2. Remove any previous `shiny-events-*.jar` addon from the server's `mods` folder.
-3. Download **`shiny-events-1.2.0.jar`** from [GitHub Releases](https://github.com/pr0fyle/cobblemon-events/releases/latest), or build it using the instructions below, and copy it into the server's `mods` folder. Do not install the `-sources.jar`, the source-code ZIP, or multiple addon versions.
-4. Start the server and run the commands below as an operator.
-
-**Your friends do not install this addon.** Boss bars, XP, spawns, and berry updates use the existing Minecraft/Cobblemon client behavior. The addon loads on dedicated servers only, not client-hosted singleplayer or LAN worlds.
+v Generic AI Description v
 
 Requires Fabric API (build target: 0.116.6+1.21.1), Fabric Loader 0.17.2 or newer, Cobblemon 1.7.3, and Java 21 or newer. Minecraft must be 1.21.1. Cobbleverse already supplies these dependencies. The mod's internal ID remains `shiny_events` so this replaces the earlier release.
 
