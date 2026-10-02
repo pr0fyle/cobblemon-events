@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "package": "com.alex.shinyevents.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "BerryBlockMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

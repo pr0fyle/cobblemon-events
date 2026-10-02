@@ -1,0 +1,52 @@
+plugins {
+    id 'fabric-loom' version '1.10.5'
+}
+
+version = project.mod_version
+group = project.maven_group
+base { archivesName = project.archives_base_name }
+
+loom {
+    mixin { defaultRefmapName = 'shiny_events.refmap.json' }
+}
+
+repositories {
+    mavenCentral()
+    maven { url = 'https://api.modrinth.com/maven' }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings loom.officialMojangMappings()
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+    // Exact official Fabric release: Cobblemon 1.7.3 for Minecraft 1.21.1.
+    modImplementation 'maven.modrinth:cobblemon:kF7CvxTo'
+    // Cobblemon ships Kotlin at runtime; this addon uses its Java-callable API.
+    compileOnly 'org.jetbrains.kotlin:kotlin-stdlib:2.2.20'
+    testImplementation platform('org.junit:junit-bom:5.12.2')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    testImplementation 'com.google.code.gson:gson:2.11.0'
+}
+
+processResources {
+    inputs.property 'version', project.version
+    filesMatching('fabric.mod.json') { expand version: project.version }
+}
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(21)
+    withSourcesJar()
+}
+tasks.withType(JavaCompile).configureEach {
+    options.release = 21
+    options.encoding = 'UTF-8'
+}
+test { useJUnitPlatform() }
+
+tasks.withType(Jar).configureEach {
+    from('LICENSE') {
+        rename { "LICENSE_${project.archives_base_name}" }
+    }
+}

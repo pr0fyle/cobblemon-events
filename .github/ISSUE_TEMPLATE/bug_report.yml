@@ -1,0 +1,40 @@
+name: Bug report
+description: Report a problem with Cobblemon Events.
+body:
+  - type: textarea
+    id: versions
+    attributes:
+      label: Versions
+      description: Include the addon and server versions, plus your modpack if you use one.
+      placeholder: |
+        Cobblemon Events:
+        Minecraft:
+        Fabric Loader:
+        Fabric API:
+        Cobblemon:
+        Modpack name and version:
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Include the exact commands you ran and what happened next.
+    validations:
+      required: true
+
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and actual behavior
+      description: What did you expect, and what happened instead?
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Server logs or crash report
+      description: Paste relevant lines from logs/latest.log or link the full log or crash report. Remove private information before posting.
+      render: text

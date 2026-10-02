@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "shiny_events",
+  "version": "${version}",
+  "name": "Cobblemon Events",
+  "license": "MIT",
+  "contact": {
+    "sources": "https://github.com/pr0fyle/cobblemon-events",
+    "issues": "https://github.com/pr0fyle/cobblemon-events/issues"
+  },
+  "description": "Timed and randomized shiny, ultra-rare spawn, battle XP, and berry growth events with countdown boss bars.",
+  "environment": "server",
+  "entrypoints": {
+    "server": ["com.alex.shinyevents.ShinyEventsMod"]
+  },
+  "mixins": ["shiny_events.mixins.json"],
+  "depends": {
+    "fabricloader": ">=0.17.2",
+    "minecraft": "1.21.1",
+    "java": ">=21",
+    "fabric-api": "*",
+    "cobblemon": "1.7.3"
+  }
+}
